@@ -1,37 +1,41 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
+import './styles/Register.css';
 
 
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nome: "",
-      email: "",
-      senha: "",
+      name: '',
+      email: '',
+      password: '',
     };
   }
 
   handleChange = (event) => {
+    const { name, value } = event.target;
     this.setState({
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const data = {
-      nome: this.state.nome,
-      email: this.state.email,
-      senha: this.state.senha,
-    };
+    const { name, email, password } = this.state;
 
-    // Envia os dados para o backend
-    axios
-      .post("/api/register", data)
+    // Enviar a solicitação HTTP de cadastro
+    axios.post('http://localhost:4000/users', {
+      name,
+      email,
+      password,
+    })
       .then((response) => {
-        console.log(response);
+        if (response.status === 201) {
+          // Redirecionar para a página de login
+          this.props.history.push('/login');
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -45,9 +49,9 @@ class Register extends Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="nome"
+            name="name"
             placeholder="Nome"
-            value={this.state.nome}
+            value={this.state.name}
             onChange={this.handleChange}
           />
           <input
@@ -59,7 +63,7 @@ class Register extends Component {
           />
           <input
             type="password"
-            name="senha"
+            name="password"
             placeholder="Senha"
             value={this.state.password}
             onChange={this.handleChange}

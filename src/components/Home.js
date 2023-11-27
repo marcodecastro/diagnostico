@@ -12,6 +12,7 @@ class Home extends Component {
         </p>
         <a href="/register">Cadastrar</a>
         <a href="/login">Login</a>
+        <a href="/recoverPassword">Recuperar Senha</a>
       </div>
     );
   }

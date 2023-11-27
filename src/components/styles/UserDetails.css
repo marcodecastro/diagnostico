@@ -1,0 +1,12 @@
+.user-details-container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .user-details-header {
+    margin-bottom: 20px;
+  }
+  
+  .user-details-item {
+    margin-bottom: 20px;
+  }

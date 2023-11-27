@@ -1,0 +1,14 @@
+.edit-user-data-container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .edit-user-data-form {
+    padding: 20px;
+  }
+  
+  .edit-user-data-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }

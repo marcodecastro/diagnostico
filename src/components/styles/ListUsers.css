@@ -1,0 +1,19 @@
+.list-users-container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .list-users-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .list-users-table th,
+  .list-users-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .list-users-table th {
+    background-color: #ccc;
+  }
